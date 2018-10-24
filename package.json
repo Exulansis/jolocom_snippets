@@ -1,0 +1,11 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "cred-types-jolocom-core": "^0.0.9",
+    "jolocom-lib": "^2.0.15",
+    "node-fetch": "^2.2.0"
+  }
+}
