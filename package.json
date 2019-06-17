@@ -1,12 +1,15 @@
 {
   "name": "playground",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "dependencies": {
     "@types/node": "^10.12.9",
-    "cred-types-jolocom-core": "^0.0.9",
-    "jolocom-lib": "^2.2.2",
-    "node-fetch": "^2.2.0"
+    "cred-types-jolocom-demo": "^0.2.1",
+    "jolocom-lib": "^2.4.3"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.2"
   }
 }

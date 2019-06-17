@@ -1,8 +1,9 @@
 import { JolocomLib, claimsMetadata } from 'jolocom-lib'
+import {claimsMetadata as demoClaimsMetadata} from 'cred-types-jolocom-demo'
 import { data } from './data'
 
 const registry = JolocomLib.registries.jolocom.create()
-const vaultedKeyProvider = new JolocomLib.keyProvider(data.seed, data.secret)
+const vaultedKeyProvider = new JolocomLib.KeyProvider(data.seed, data.secret)
 
 registry
   .authenticate(vaultedKeyProvider, {
@@ -14,7 +15,7 @@ registry
       {
         metadata: claimsMetadata.mobilePhoneNumber,
         claim: {
-          telephone: '01234567'
+          telephone: '000111222'
         },
         subject: iw.did
       },
@@ -23,16 +24,20 @@ registry
 
     console.log(mobilePhoneNrCredential.toJSON())
 
-    const emailCredential = await iw.create.signedCredential(
+    const driverLicenseCredential = await iw.create.signedCredential(
       {
-        metadata: claimsMetadata.emailAddress,
+        metadata: demoClaimsMetadata.demoDriversLicence,
         claim: {
-          email: 'eugeniu@jolocom.com'
+          familyName: 'Test Name',
+          givenName: 'Test Given Name',
+          identifier: 'DOC0123',
+          postalCode: '12351',
+          residence: 'Berlin'
         },
         subject: iw.did
       },
       data.secret
     )
 
-    console.log(emailCredential.toJSON())
+    console.log(driverLicenseCredential)
   })

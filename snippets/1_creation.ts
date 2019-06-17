@@ -2,7 +2,7 @@ import { JolocomLib } from 'jolocom-lib'
 import { data } from './data'
 
 const registry = JolocomLib.registries.jolocom.create()
-const vaultedProvider = new JolocomLib.keyProvider(data.seed, data.secret)
+const vaultedProvider = new JolocomLib.KeyProvider(data.seed, data.secret)
 
 const publicEthereumKey = vaultedProvider.getPublicKey({
   derivationPath: JolocomLib.KeyTypes.ethereumKey,
